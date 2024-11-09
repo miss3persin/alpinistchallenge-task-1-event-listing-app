@@ -1,8 +1,8 @@
 
-# Event Listing App
+# Event Listing App (Eventify ✨)
 
 ## Project Overview
-The Event Listing App is a web application that enables users to view, add, and bookmark events. Users can navigate through an organized list of events, view event details, and bookmark specific events for later reference. This app supports essential CRUD operations like adding new events and removing them from bookmarks. It uses local storage to save events and bookmarks, ensuring data persistence even when the user exits and returns to the site.
+Eventify ✨, The Event Listing App is a web application that enables users to view, add, and bookmark events. Users can navigate through an organized list of events, view event details, and bookmark specific events for later reference. This app supports essential CRUD operations like adding new events and removing them from bookmarks. It uses local storage to save events and bookmarks, ensuring data persistence even when the user exits and returns to the site.
 
 ### Key Features
 - **Event Browsing**: View a list of available events, each displayed with relevant details like title, date, location, and description.
@@ -15,7 +15,7 @@ The Event Listing App is a web application that enables users to view, add, and 
 ## Tech Stack
 - **Next.js**: React framework for building server-rendered or statically exported applications.
 - **React**: JavaScript library for building user interfaces.
-- **CSS**: Styling for a responsive, user-friendly layout.
+- **TailwindCSS**: Styling for a responsive, user-friendly layout.
 - **Local Storage**: Persistent storage of events and bookmarks.
 
 ## Setup Instructions
@@ -26,11 +26,11 @@ Make sure you have **Node.js** installed on your machine.
 ### Installation Steps
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/event-listing-app.git
+   git clone https://github.com/miss3persin/alpinistchallenge-task-1-event-listing-app.git
    ```
 2. **Navigate to the Project Directory**:
    ```bash
-   cd event-listing-app
+   cd alpinistchallenge-task-1-event-listing-app
    ```
 3. **Install Dependencies**:
    ```bash
