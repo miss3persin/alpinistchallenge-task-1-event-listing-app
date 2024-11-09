@@ -10,17 +10,17 @@ export default function AddEventForm() {
         time: '',
         location: '',
         category: '',
-        image: '', // Store image URL or file data
+        image: '',
         description: ''
     });
     const [formErrors, setFormErrors] = useState({});
     const [isFileSelected, setIsFileSelected] = useState(false);
-    const [imageMethod, setImageMethod] = useState('url'); // Tracks which method is selected ('url' or 'upload')
+    const [imageMethod, setImageMethod] = useState('url');
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
-        setFormErrors(prev => ({ ...prev, [name]: '' })); // Clear error on input change
+        setFormErrors(prev => ({ ...prev, [name]: '' }));
     };
 
     const handleImageChange = (e) => {
@@ -31,20 +31,19 @@ export default function AddEventForm() {
                 setFormData(prev => ({ ...prev, image: fileReader.result }));
                 setIsFileSelected(true);
             };
-            fileReader.readAsDataURL(file); // Converts image to base64 URL
+            fileReader.readAsDataURL(file);
         }
     };
 
     const handleImageMethodChange = (e) => {
-        setImageMethod(e.target.value); // Sets which method (URL or upload) is active
-        setFormData(prev => ({ ...prev, image: '' })); // Clears previously selected image
-        setIsFileSelected(false); // Resets file selection state
+        setImageMethod(e.target.value);
+        setFormData(prev => ({ ...prev, image: '' }));
+        setIsFileSelected(false);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Validate form data
         const errors = {};
         Object.keys(formData).forEach(field => {
             if (!formData[field] && field !== 'image') {
@@ -52,7 +51,6 @@ export default function AddEventForm() {
             }
         });
 
-        // Validate image field based on selected method (URL or file upload)
         if (imageMethod === 'url' && !formData.image) {
             errors.image = 'Image URL is required';
         }
@@ -61,7 +59,7 @@ export default function AddEventForm() {
         }
 
         if (Object.keys(errors).length > 0) {
-            setFormErrors(errors); // Set errors if validation fails
+            setFormErrors(errors);
             return;
         }
 
@@ -123,7 +121,6 @@ export default function AddEventForm() {
                 </select>
                 {formErrors.category && <p className="text-red-500 text-sm">{formErrors.category}</p>}
 
-                {/* Image method selection (URL or upload) */}
                 <div className="flex gap-4">
                     <label className='flex items-center gap-1'>
                         <input
@@ -147,7 +144,6 @@ export default function AddEventForm() {
                     </label>
                 </div>
 
-                {/* Image URL input (visible if URL method is selected) */}
                 {imageMethod === 'url' && (
                     <input
                         type="text"
@@ -158,7 +154,6 @@ export default function AddEventForm() {
                     />
                 )}
 
-                {/* File upload input (visible if Upload method is selected) */}
                 {imageMethod === 'upload' && (
                     <div className="flex flex-col">
                         <label className="text-sm font-medium text-gray-700">Upload an Image</label>

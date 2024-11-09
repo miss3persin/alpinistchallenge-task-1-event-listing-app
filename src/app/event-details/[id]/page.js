@@ -1,9 +1,8 @@
-// src/app/event-details/[id]/page.js
 'use client';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { getStoredEvents, isBookmarked, toggleBookmark } from '../../utils/localStorage';
-import eventsData from '../../data/events.json'; // Import the default events data
+import eventsData from '../../data/events.json';
 import Link from 'next/link';
 import { Loader } from '@/app/components/Loader';
 
@@ -17,23 +16,22 @@ export default function EventDetails({ params }) {
     const storedEvents = getStoredEvents();
     let foundEvent = storedEvents.find(event => event.id === parseInt(id, 10));
 
-    // Check in eventsData if not found in localStorage
     if (!foundEvent) {
       foundEvent = eventsData.find(event => event.id === parseInt(id, 10));
     }
 
     if (!foundEvent) {
-      router.push('/404'); // Redirect to a 404 if not found
+      router.push('/404');
     } else {
       setEvent(foundEvent);
-      setBookmarked(isBookmarked(foundEvent.id)); // Check if the event is bookmarked
+      setBookmarked(isBookmarked(foundEvent.id));
     }
   }, [id, router]);
 
   const handleBookmarkToggle = () => {
     if (event) {
       toggleBookmark(event);
-      setBookmarked(prev => !prev); // Toggle the bookmarked state
+      setBookmarked(prev => !prev);
     }
   };
 

@@ -1,9 +1,9 @@
-// Home.js
 'use client';
 import EventCard from './EventCard';
 import eventsData from '../data/events.json';
 import { useState, useEffect } from 'react';
 import FilterBar from '../components/FilterBar';
+import { Loader } from '../components/Loader';
 import { getStoredEvents } from '../utils/localStorage';
 
 export default function Home() {
@@ -15,12 +15,16 @@ export default function Home() {
     location: '',
     searchTerm: '',
   });
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const storedEvents = getStoredEvents();
-    const combinedEvents = [...eventsData, ...storedEvents];
-    setEvents(combinedEvents);
-    setFilteredEvents(combinedEvents);
+    setTimeout(() => {
+      const storedEvents = getStoredEvents();
+      const combinedEvents = [...eventsData, ...storedEvents];
+      setEvents(combinedEvents);
+      setFilteredEvents(combinedEvents);
+      setLoading(false);
+    }, 1000);
   }, []);
 
   const handleFilterChange = (field, value) => {
@@ -54,22 +58,27 @@ export default function Home() {
   };
 
   return (
-    <main className="bg-[#F4EEE0] min-h-screen p-6 pt-0">
+    <main className="bg-[#F4EEE0] min-h-screen">
       <FilterBar 
         filters={filters} 
         onFilterChange={handleFilterChange} 
         onSearch={handleSearch} 
         onApplyFilters={handleApplyFilters} 
       />
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8">
-        {filteredEvents.length > 0 ? (
-          filteredEvents.map(event => (
-            <EventCard key={event.id} event={event} />
-          ))
-        ) : (
-          <p className="text-center text-gray-500 col-span-full">No events found.</p>
-        )}
-      </div>
+      
+      {loading ? (
+        <Loader />
+      ) : (
+        <div className="p-6 pt-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8">
+          {filteredEvents.length > 0 ? (
+            filteredEvents.map(event => (
+              <EventCard key={event.id} event={event} />
+            ))
+          ) : (
+            <p className="text-center text-gray-500 col-span-full">No events found.</p>
+          )}
+        </div>
+      )}
     </main>
   );
 }

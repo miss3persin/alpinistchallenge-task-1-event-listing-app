@@ -1,5 +1,3 @@
-// src/app/add-event/page.js
-
 import React from 'react';
 import AddEventForm from './AddEventForm';
 

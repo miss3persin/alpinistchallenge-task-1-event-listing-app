@@ -6,11 +6,12 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-primary text-secondary p-6 flex md:flex-row flex-col justify-between items-center">
-      <h1 className="text-2xl font-bold mb-4 md:mb-0">
+    <nav className="relative bg-primary text-secondary md:pt-6 pt-0 pb-10 flex md:flex-row flex-col justify-between items-center">
+        <div className='fixed bg-primary px-6 pb-4 pt-6 md:pt-10 flex md:flex-row flex-col justify-between items-center w-full'>
+      <h1 className="text-2xl font-bold mb-4 md:mb-0 text-black">
         <Link href="/home">Eventify ✨</Link>
       </h1>
-      <div className="flex space-x-6">
+      <div className="flex space-x-6 text-black">
         <Link 
           href="/home" 
           className={`hover:underline ${pathname === '/home' ? 'underline' : ''}`}
@@ -29,6 +30,7 @@ export default function Navbar() {
         >
           Bookmarks
         </Link>
+      </div>
       </div>
     </nav>
   );

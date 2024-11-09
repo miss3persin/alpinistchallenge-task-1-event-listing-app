@@ -14,7 +14,7 @@ export default function EventCard({ event, onUnbookmark }) {
     let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
     if (isBookmarked) {
       bookmarks = bookmarks.filter(b => b.id !== event.id);
-      if (onUnbookmark) onUnbookmark(event.id); // Call unbookmark function in parent
+      if (onUnbookmark) onUnbookmark(event.id);
     } else {
       bookmarks.push(event);
     }
