@@ -124,8 +124,8 @@ export default function AddEventForm() {
                 {formErrors.category && <p className="text-red-500 text-sm">{formErrors.category}</p>}
 
                 {/* Image method selection (URL or upload) */}
-                <div className="flex gap-4 mb-4">
-                    <label>
+                <div className="flex gap-4">
+                    <label className='flex items-center gap-1'>
                         <input
                             type="radio"
                             name="imageMethod"
@@ -135,7 +135,7 @@ export default function AddEventForm() {
                         />
                         Image URL
                     </label>
-                    <label>
+                    <label className='flex items-center gap-1'>
                         <input
                             type="radio"
                             name="imageMethod"
