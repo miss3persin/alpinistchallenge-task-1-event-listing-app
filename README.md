@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Event Listing App
 
-First, run the development server:
+## Project Overview
+The Event Listing App is a web application that enables users to view, add, and bookmark events. Users can navigate through an organized list of events, view event details, and bookmark specific events for later reference. This app supports essential CRUD operations like adding new events and removing them from bookmarks. It uses local storage to save events and bookmarks, ensuring data persistence even when the user exits and returns to the site.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Key Features
+- **Event Browsing**: View a list of available events, each displayed with relevant details like title, date, location, and description.
+- **Event Details Page**: Click on an event to view more detailed information.
+- **Add New Events**: Submit a form to add new events to the listing.
+- **Bookmark Events**: Bookmark favorite events for quick access.
+- **Unbookmark Functionality**: Unbookmark events directly from the bookmark page.
+- **Persistent Storage**: Events and bookmarks are saved in local storage for data persistence.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
+- **Next.js**: React framework for building server-rendered or statically exported applications.
+- **React**: JavaScript library for building user interfaces.
+- **CSS**: Styling for a responsive, user-friendly layout.
+- **Local Storage**: Persistent storage of events and bookmarks.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Setup Instructions
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Prerequisites
+Make sure you have **Node.js** installed on your machine.
 
-## Learn More
+### Installation Steps
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/yourusername/event-listing-app.git
+   ```
+2. **Navigate to the Project Directory**:
+   ```bash
+   cd event-listing-app
+   ```
+3. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
+4. **Run the Development Server**:
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-To learn more about Next.js, take a look at the following resources:
+## Testing
+Currently, no automated tests have been implemented in this project.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To add testing:
+- **Unit Testing**: Use a framework like **Jest** to create component and utility function tests.
+- **End-to-End Testing**: Consider using a framework like **Cypress** to test the complete user flows, such as adding and removing bookmarks.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Future Improvements
+- **Form Validation**: Ensure all required fields are filled before submitting.
+- **UI Enhancements**: Refine the UI for an improved user experience.
+- **Backend Integration**: Consider replacing local storage with a backend API for more advanced data handling and scalability.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+This project is licensed under the MIT License.

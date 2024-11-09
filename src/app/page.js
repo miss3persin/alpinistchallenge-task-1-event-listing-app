@@ -1,13 +1,6 @@
-import React from 'react'
+'use client'
+import { redirect } from 'next/navigation';
 
-const page = () => {
-  return (
-    <section className='py-8'>
-    <div className='container'>
-      <h1 className='text-3xl font-bold text-center'>My NextJS Boilerplate</h1>
-    </div>
-  </section>
-  )
+export default function Page() {
+  redirect('/home');
 }
-
-export default page

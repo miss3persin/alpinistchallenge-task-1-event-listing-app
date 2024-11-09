@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "title": "Jazz Night",
+      "date": "2024-11-15",
+      "time": "19:00",
+      "location": "Lekki Jazz Club",
+      "category": "Music",
+      "image": "https://images.unsplash.com/photo-1531402581960-f0a304148a1c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Enjoy a night of smooth jazz at the downtown club. Perfect for music lovers!"
+    },
+    {
+      "id": 2,
+      "title": "AnimeFest",
+      "date": "2024-12-01",
+      "time": "12:00",
+      "location": "Eko Hotel",
+      "category": "Anime",
+      "image": "https://images.unsplash.com/photo-1625189659340-887baac3ea32?q=80&w=1373&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "A celebration of anime with otakus and weebs from around the country. Don't miss out!"
+    }
+  ]
+  
