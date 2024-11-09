@@ -27,9 +27,9 @@ export default function EventCard({ event, onUnbookmark }) {
         <Link href={`/event-details/${event.id}`}>
       <img src={event.image} alt={event.title} className="w-full h-48 object-cover" />
       <div className="p-4">
-        <h2 className="text-lg font-bold">{event.title}</h2>
-        <p className="text-gray-500">{event.date} | {event.location} | {event.category}</p>
-        <p className="text-gray-700 mt-2 overflow-hidden text-ellipsis whitespace-nowrap">{event.description}</p>
+        <h2 className="text-lg font-bold text-center lg:text-left">{event.title}</h2>
+        <p className="text-gray-500 text-center lg:text-left">{event.date} | {event.location} | {event.category}</p>
+        <p className="text-gray-700 mt-2 text-center lg:text-left overflow-hidden text-ellipsis whitespace-nowrap">{event.description}</p>
       </div>
       </Link>
         <div className="flex p-4 justify-between items-center gap-3 lg:gap-0 flex-col lg:flex-row">
